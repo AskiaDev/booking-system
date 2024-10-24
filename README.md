@@ -1,4 +1,4 @@
-# AGODA BOOKING HOTEL SYSTEM
+# BOOKING HOTEL SYSTEM
 
 
 ### Demo Credentials
