@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Logo from "./Logo";
 import MainNav from "./MainNav";
+import { useLocation } from "react-router-dom";
+import Uploader from "../data/Uploader";
 
 const StyledSideBar = styled.aside`
   background-color: var(--color-grey-0);
@@ -15,10 +17,16 @@ const StyledSideBar = styled.aside`
 `;
 
 const SideBar = () => {
+  const location = useLocation()
+
+  const searchParams = new URLSearchParams(location.search)
+  const isUploader = searchParams.get("uploader") === "true"
+
   return (
     <StyledSideBar>
       <Logo />
       <MainNav />
+      {isUploader && <Uploader />}
     </StyledSideBar>
   );
 };
